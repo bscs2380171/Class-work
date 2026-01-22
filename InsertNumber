@@ -1,0 +1,28 @@
+public void insert(int value) {
+
+    if (root == null) {          // Empty BST
+        root = new Node(value);
+        return;
+    }
+
+    Node current = root;
+
+    while (true) {
+
+        if (value < current.value) {
+            if (current.leftChild == null) {
+                current.leftChild = new Node(value);
+                break;
+            }
+            current = current.leftChild;
+        }
+
+        else {
+            if (current.rightChild == null) {
+                current.rightChild = new Node(value);
+                break;
+            }
+            current = current.rightChild;
+        }
+    }
+}
